@@ -1,9 +1,10 @@
 import os
-from flask_migrate import Migrate
 from sys import exit
 
-from apps.config import config_dict
+from flask_migrate import Migrate
+
 from apps import create_app, db
+from apps.config import config_dict
 
 # WARNING: Don't run with debug turned on in production!
 DEBUG = (os.getenv('DEBUG', 'False') == 'True')
