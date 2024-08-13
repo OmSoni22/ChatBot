@@ -5,7 +5,7 @@ from apps.home import blueprint
 from apps.llm.llm_provider import ChatLLM
 from apps.models import Chats
 
-chat = ChatLLM(model='llama3')
+chat = ChatLLM()
 
 
 @blueprint.route('/')
@@ -13,4 +13,4 @@ def index():
     # chat_record = Chats(title='Om')
     # db.session.add(chat_record)
     # db.session.commit()
-    return chat.get_title('National Bird', 'Peacock'), 201
+    return chat.get_response('National Bird of India?'), 201
